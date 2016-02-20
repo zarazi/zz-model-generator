@@ -2,8 +2,11 @@
   "name": "zz-model-generator",
   "version": "0.1.1",
   "description": "Generate Data Model from JavaScript",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "babel src/index.js -o dist/index.js",
+    "postbuild": "cp src/bot-names.json dist/bot-names.json",
     "test": "mocha src/index.test.js -w"
   },
   "repository": {
@@ -25,6 +28,8 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
+    "babel": "6.5.2",
+    "babel-cli": "6.5.1",
     "chai": "3.5.0",
     "mocha": "2.4.5"
   }

@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var bot = require('./index').bot;
+import {expect} from 'chai';
+import {bot} from './index';
 
 describe('bot-names', function() {
     describe('all', function() {
